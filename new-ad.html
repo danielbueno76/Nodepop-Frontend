@@ -22,12 +22,22 @@
     <div class="container">
         <div class="columns">
             <div class="column is-two-thirds">
-                <h1 class="title">New ad</h1>
+                <h1 class="title">New advertisement</h1>
                 <form>
-                    <textarea name="message" class="textarea" placeholder="Write your tweet here..."
-                        required></textarea>
+                    <input name="name" class="input" type="text" placeholder="Name" required>
+                    <input name="price" class="input" type="number" placeholder="Price" required>
+                    <div class="control">
+                        <label class="radio">
+                            <input type="radio" name="sale" required>
+                            Buy
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="sale">
+                            Sell
+                        </label>
+                    </div>
                     <input type="file" name="file" accept="image/*">
-                    <button class="button is-primary is-pulled-right" disabled>Publish</button>
+                    <button class="button is-primary is-pulled-right">Publish</button>
                 </form>
             </div>
         </div>

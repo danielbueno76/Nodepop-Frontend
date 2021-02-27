@@ -15,12 +15,12 @@ export default {
             return data.map(ad => {
                 return {
                     id: ad.id,
-                    name: ad.name,
+                    name: ad.name.replace(/(<([^>]+)>)/gi, ""),
                     price: ad.price,
                     sale: ad.sale,
                     date: ad.createdAt || ad.updatedAt,
                     author: ad.user.username || 'Unknown',
-                    image: ad.photo || null,
+                    image: ad.image || null,
                     canBeDeleted: currentUser ? currentUser.userId === ad.userId: false
                 }
             })

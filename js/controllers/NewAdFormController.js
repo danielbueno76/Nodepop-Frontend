@@ -7,7 +7,6 @@ export default class NewAdFormController extends BaseController {
         super(element);
         this.checkIfUserIsLogged();
         this.attachEventListeners();
-        this.focusInTextarea();
     }
 
     async checkIfUserIsLogged() {
@@ -19,26 +18,13 @@ export default class NewAdFormController extends BaseController {
         }
     }
 
-    focusInTextarea() {
-        const textarea = this.element.querySelector('textarea');
-        textarea.focus();
-    }
-
     attachEventListeners() {
-        const textarea = this.element.querySelector('textarea');
-        textarea.addEventListener('keyup', () => {
-            const button = this.element.querySelector('button');
-            if (this.element.checkValidity()) {
-                button.removeAttribute('disabled');
-            } else {
-                button.setAttribute('disabled', true);
-            }
-        });
-
         this.element.addEventListener('submit', async event => {
             event.preventDefault();
             const ad = {
-                message: null,
+                name: this.element.elements.name.value,
+                price: this.element.elements.price.value,
+                sale: this.element.elements.sale[1].checked, // if it is true this means that is for sell, otherwise the user wants to buy this product.
                 image: null
             }
             if (this.element.elements.file.files.length > 0) {
