@@ -8,7 +8,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <script type="module" src="js/index.js"></script>    
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="global-errors hidden"></div>
+
+    <input type="search" placeholder="Buscar">
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <main class="posts-list"></main>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="new-ad">
+        <a href="/new-ad.html" class="button is-primary is-hidden new-ad-button">New ad</a>
+
+        <span class="is-hidden login-register-buttons">
+            <a href="/login.html" class="button is-primary">Login</a> or
+            <a href="/register.html" class="button is-primary">Register</a>
+        </span>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>

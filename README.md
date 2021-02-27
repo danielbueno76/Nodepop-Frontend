@@ -1,5 +1,7 @@
 # Nodepop-Frontend
 
+## Advertencia: Deshabilitar tu bloqueador de anuncios o es posible que bloquee la API del backend(sparrest) al tener esta extension: /api/ads
+
 ## Este frontend deberá contar con las siguientes páginas y funcionalidades:
 
 **Página de listado de anuncios:**
