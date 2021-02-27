@@ -47,7 +47,7 @@ export default class NewAdFormController extends BaseController {
             this.publish(this.events.START_LOADING);
             try {
                 await dataService.saveAd(ad);
-                window.location.href = '/?mensaje=adtOK'
+                window.location.href = '/?mensaje=adOK'
             } catch (error) {
                 this.publish(this.events.ERROR, error)
             } finally {
