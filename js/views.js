@@ -19,7 +19,7 @@ export const adView = (ad, noDelete=true) => {
     messageSale = 'I am looking for this product.'
   }
 
-  return `<a href="/ad.html?ad=${ad.id}"><div class="card">
+  return `<a href="/ad.html?id=${ad.id}"><div class="card">
     <div class="card-content">
       <div class="media">
         <div class="media-content">

@@ -8,10 +8,9 @@ export default class LoginFormController extends RegisterFormController {
         const data = await dataService.login(user)
         dataService.saveToken(data.accessToken)
         let next = '/'
-        const queryParams = window.location.search.replace('?', '')
-        const queryParamsParts = queryParams.split('=')
-        if (queryParamsParts.length >= 2 && queryParamsParts[0] === 'next') {
-            next = queryParamsParts[1]
+        const obtainQuery = dataService.getQuery(window.location.search)
+        if (obtainQuery.next) {
+            next = obtainQuery.next
         }
         window.location.href = next
     }

@@ -28,9 +28,8 @@ export default class AdController extends BaseController {
     async loadAd() {
         this.publish(this.events.START_LOADING, {});
         try {
-            const queryParam = window.location.search.replace('?', '')
-            const queryParamParts = queryParam.split('=')
-            const id = queryParamParts.length === 2 ? queryParamParts[1] : null;
+            const obtainQuery = dataService.getQuery(window.location.search)
+            const id = obtainQuery.id ? obtainQuery.id : null; // if undefined -> null. null is better
             const ad = await dataService.getAd(id);
             this.render(ad);
         } catch (error) {

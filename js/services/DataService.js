@@ -30,6 +30,10 @@ export default {
     },
     
     getAd: async function(id) {
+        if (!id) {
+            throw new Error(`HTTP error 404`)
+        }
+
         const currentUser = await this.getUser()
         let url = `${BASE_URL}/api/ads/${id}?_expand=user`
 
@@ -80,7 +84,7 @@ export default {
         if (token) {
             config.headers['Authorization'] = `Bearer ${token}`
         }
-        
+        console.log(config.body)
         const response = await fetch(url, config)
 
         const data = await response.json()
@@ -156,5 +160,30 @@ export default {
     deleteAd: async function(ad) {
         const url = `${BASE_URL}/api/ads/${ad.id}`
         return await this.delete(url)
-    } 
+    },
+
+    updateAd: async function(ad, changeImage=false) {
+        const url = `${BASE_URL}/api/ads/${ad.id}`
+        if (changeImage) {
+            const imageURL = await this.uploadImage(ad.image)
+            ad.image = imageURL
+        }
+        return await this.put(url, ad)
+    },
+
+    getQuery(queryFull) { // queryFull is window.location.search
+        let queryAsLO = {} // we are goint to return the query as a literal object
+        const query = queryFull.replace('?', '')
+        const queryParamParts = query.split('&')
+        queryParamParts.map(queryParam => {
+            const [key, value, ...rests] = queryParam.split('=')
+            queryAsLO[key] = value
+            // the rest part are because inside a queryParam could be several =
+            rests.forEach(rest => {
+                queryAsLO[key] += "=" + rest
+            })
+        })
+
+        return queryAsLO
+    }
 }

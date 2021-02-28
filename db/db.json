@@ -1,0 +1,134 @@
+{
+  "ads": [
+    {
+      "name": "Car",
+      "price": "4789",
+      "sale": false,
+      "image": null,
+      "userId": 1,
+      "updatedAt": "2021-02-28T14:31:17.174Z",
+      "id": 2
+    },
+    {
+      "name": "Car",
+      "price": "4444",
+      "sale": true,
+      "image": null,
+      "userId": 1,
+      "updatedAt": "2021-02-28T18:55:05.995Z",
+      "id": 4
+    },
+    {
+      "name": "Computer",
+      "price": "444",
+      "sale": false,
+      "image": null,
+      "userId": 1,
+      "updatedAt": "2021-02-28T18:55:19.395Z",
+      "id": 5
+    },
+    {
+      "name": "algo",
+      "price": "78794",
+      "sale": false,
+      "image": null,
+      "userId": 1,
+      "updatedAt": "2021-02-28T18:55:40.019Z",
+      "id": 7
+    },
+    {
+      "name": "Twitter-API",
+      "price": "1456",
+      "sale": true,
+      "image": null,
+      "userId": 1,
+      "updatedAt": "2021-02-28T18:55:58.085Z",
+      "id": 8
+    },
+    {
+      "name": "Computer",
+      "price": "46789",
+      "sale": true,
+      "image": null,
+      "userId": 1,
+      "updatedAt": "2021-02-28T18:56:09.722Z",
+      "id": 9
+    },
+    {
+      "name": "Computer",
+      "price": "987984",
+      "sale": false,
+      "image": null,
+      "userId": 1,
+      "updatedAt": "2021-02-28T18:56:20.499Z",
+      "id": 10
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "luke@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 2,
+      "username": "anakin@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 3,
+      "username": "leia@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 4,
+      "username": "chewe@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 5,
+      "username": "han@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 6,
+      "username": "c3po@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 7,
+      "username": "yoda@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 8,
+      "username": "papatine@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 9,
+      "username": "alberto@kasfactory.net",
+      "password": "$2b$10$GyarejZrcK4/A54R/cFRtextW/seSpVIkFYjO2ggMbPePQaWe9g1G"
+    },
+    {
+      "id": 10,
+      "username": "kas@keepcoding.io",
+      "password": "$2b$10$BQrcE9MDYec6wCnd/u/qi.u0PUwTAo9UoenD40Y0o3EazIo2o1I8m"
+    },
+    {
+      "username": "annie",
+      "password": "fuck",
+      "id": 11
+    },
+    {
+      "username": "annie23",
+      "password": "$2b$10$5HXLaaprXiuWHhCTqD7/y.nLbwHv/lS8KgXrjshB7mOxh2VpmB8Bq",
+      "id": 12
+    },
+    {
+      "username": "yeah@gmail.com",
+      "password": "$2b$10$wEqQy8vD9kauxfuTQSX6jOTCXmC.qz8QbbVrpWp86j9RkQT8ltSp.",
+      "id": 13
+    }
+  ]
+}

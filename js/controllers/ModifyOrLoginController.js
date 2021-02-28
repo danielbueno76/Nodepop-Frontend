@@ -12,8 +12,10 @@ export default class ModifyOrLoginController extends BaseController {
     async checkIfUserIsLogged() {
         const usesIsLogged = await dataService.isUserLogged();
         if (usesIsLogged) {
-            const newAdButton = this.element.querySelector('.modify-ad-button');
-            newAdButton.classList.remove('is-hidden');
+            const modifyAdButton = this.element.querySelector('.modify-ad-button');
+            modifyAdButton.classList.remove('is-hidden');
+            const obtainQuery = await dataService.getQuery(window.location.search)
+            modifyAdButton.href += `?id=${obtainQuery['id']}`
             const logoutButton = this.element.querySelector('.logout-button');
             logoutButton.classList.remove('is-hidden');
         } else {
