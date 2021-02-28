@@ -7,7 +7,7 @@ export default {
         const currentUser = await this.getUser()
         let url = `${BASE_URL}/api/ads?_expand=user&_sort=id&_order=desc`
         if (query) {
-            url += `q=${query}`
+            url += `&name=${query}`
         }
         const response = await fetch(url)
         if (response.ok) {
@@ -24,6 +24,28 @@ export default {
                     canBeDeleted: currentUser ? currentUser.userId === ad.userId: false
                 }
             })
+        } else {
+            throw new Error(`HTTP error ${response.status}`)
+        }
+    },
+    
+    getAd: async function(id) {
+        const currentUser = await this.getUser()
+        let url = `${BASE_URL}/api/ads/${id}?_expand=user`
+
+        const response = await fetch(url)
+        if (response.ok) {
+            const data = await response.json()
+            return {
+                id: data.id,
+                name: data.name.replace(/(<([^>]+)>)/gi, ""),
+                price: data.price,
+                sale: data.sale,
+                date: data.createdAt || data.updatedAt,
+                author: data.user.username || 'Unknown',
+                image: data.image || null,
+                canBeDeleted: currentUser ? currentUser.userId === data.userId: false
+            }
         } else {
             throw new Error(`HTTP error ${response.status}`)
         }
@@ -58,7 +80,9 @@ export default {
         if (token) {
             config.headers['Authorization'] = `Bearer ${token}`
         }
+        
         const response = await fetch(url, config)
+
         const data = await response.json()
 
         if (response.ok) {
@@ -86,6 +110,10 @@ export default {
         return localStorage.getItem(TOKEN_KEY)
     },
 
+    deleteToken: async function() {
+        localStorage.removeItem(TOKEN_KEY)
+    },
+    
     isUserLogged: async function() {
         const token = await this.getToken()
         return token !== null

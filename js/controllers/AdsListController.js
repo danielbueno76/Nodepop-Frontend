@@ -2,17 +2,13 @@ import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
 import { adView } from '../views.js';
 import { noAdView } from '../views.js';
-import DeleteButtonController from './DeletebuttonController.js';
 
-export default class PostsListController extends BaseController {
+export default class AdsListController extends BaseController {
 
     constructor(element) {
         super(element)
         this.subscribe(this.events.SEARCH, query => {
-            this.loadPosts(query)
-        })
-        this.subscribe(this.events.AD_DELETED, ev => {
-            this.loadPosts()
+            this.loadAds(query)
         })
     }
 
@@ -24,16 +20,12 @@ export default class PostsListController extends BaseController {
 
         for (const ad of ads) {
             const article = document.createElement('article');
-            article.innerHTML = adView(ad);
-            const deleteButton = article.querySelector('button');
-            if (deleteButton) {
-                new DeleteButtonController(deleteButton, ad);
-            }
+            article.innerHTML = adView(ad, false);
             this.element.appendChild(article);
         }
     }
 
-    async loadPosts(query=null) {
+    async loadAds(query=null) {
         this.publish(this.events.START_LOADING, {});
         try {
             const ads = await dataService.getAds(query);

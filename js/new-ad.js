@@ -12,4 +12,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const formElement = document.querySelector('form');
     new NewAdFormController(formElement);
+    
 });

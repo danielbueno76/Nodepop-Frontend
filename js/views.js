@@ -1,7 +1,7 @@
-export const adView = (ad) => {
+export const adView = (ad, noDelete=true) => {
   let deleteButtonHTML = '';
-  if (ad.canBeDeleted) {
-    deleteButtonHTML = '<button class="button is-danger">Borrar</button>';
+  if (noDelete && ad.canBeDeleted) {
+    deleteButtonHTML = '<button class="button is-danger">Delete</button>';
   }
 
   let imgHTML = '';
@@ -19,7 +19,7 @@ export const adView = (ad) => {
     messageSale = 'I am looking for this product.'
   }
 
-  return `<div class="card">
+  return `<a href="/ad.html?ad=${ad.id}"><div class="card">
     <div class="card-content">
       <div class="media">
         <div class="media-content">
@@ -34,18 +34,18 @@ export const adView = (ad) => {
         ${messageSale}
         <br>
         <time datetime="${ad.date}">${ad.date}</time>
-        <br>
-        ${deleteButtonHTML}
+
       </div>
     </div>
     ${imgHTML}
-  </div>`;
+    </div></a>
+    ${deleteButtonHTML}`;
 };
 
 export const noAdView = () => {
   return `<article class="message is-primary no-ad">
           <div class="message-body">
-          Currently there are no ads. Upload one and start buying or selling!
+          No ads found
           </div>
           </article>`
 }

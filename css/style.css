@@ -64,11 +64,29 @@
   right: 20px;
   bottom: 20px;
 }
+/* modify ad or login */
+.modify-ad {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
 
 /* if there is no ads we display a message */
 .no-ad {
   position: fixed;
-  right: 30%;
+  right: 50%;
   bottom: 50%;
   font-size: larger;
+}
+
+.logout-button {
+  position: fixed;
+  top: 5%;
+  font-size: larger;
+}
+/* logo to index*/
+.logo-web {
+  position: fixed;
+  right: 90%;
+  bottom: 80%;
 }

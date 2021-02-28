@@ -2,7 +2,7 @@ import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
 
 
-export default class NewAdOrLoginController extends BaseController {
+export default class ModifyOrLoginController extends BaseController {
 
     constructor(element) {
         super(element);
@@ -12,7 +12,7 @@ export default class NewAdOrLoginController extends BaseController {
     async checkIfUserIsLogged() {
         const usesIsLogged = await dataService.isUserLogged();
         if (usesIsLogged) {
-            const newAdButton = this.element.querySelector('.new-ad-button');
+            const newAdButton = this.element.querySelector('.modify-ad-button');
             newAdButton.classList.remove('is-hidden');
             const logoutButton = this.element.querySelector('.logout-button');
             logoutButton.classList.remove('is-hidden');
