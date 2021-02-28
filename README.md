@@ -37,13 +37,15 @@
   - Precio (obligatorio): precio del anuncio
   - Compra/venta (obligatorio): indica si el anuncio se trata de una compra o de venta
 - Cuando el usuario envíe el formulario, deberá enviar al backend una petición para guardar el anuncio.
-- Se deberá gestionar todos los estados de interfaz correctamente: error (cuando se produce un error al guardar la información del anuncio), carga (mientras se guarda la información del anuncio en el backend) y éxito (cuando se han guardado correctamente la información del anuncio).
+- Se gestiona todos los estados de interfaz correctamente: error (cuando se produce un error al guardar la información del anuncio), carga (mientras se guarda la información del anuncio en el backend) y éxito (cuando se han guardado correctamente la información del anuncio).
 - Se permite redireccionarte a la pagina principal mediante el icono principal.
 - Se permite desloguearte.
 
 **Página para modificar un anuncio:**
 
 - Se muestra una interfaz parecida a la hora de crear anuncio pero con los valores ya establecidos. Si no subes ninguna imagen se mantendrá, pero si subes una imagen se el anuncio usará esta nueva imagen.
+- Cuando el usuario envíe el formulario, deberá enviar al backend una petición para modificar el anuncio.
+- Se gestiona todos los estados de interfaz correctamente: error (cuando se produce un error al guardar la información del anuncio), carga (mientras se guarda la información del anuncio en el backend) y éxito (cuando se han guardado correctamente la información del anuncio).
 - Se permite redireccionarte a la pagina principal mediante el icono principal.
 - Se permite desloguearte.
 
